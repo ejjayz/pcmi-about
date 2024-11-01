@@ -97,7 +97,7 @@ const Projects = () => {
       </div>
 
       {/* Contact Us Section Added Here */}
-      <div className="flex flex-col items-center mt-10">
+      <div className="flex flex-col items-center mt-10 z-10 relative"> {/* Added z-index and relative positioning */}
         <p className="grid-subtext text-center">Contact Us</p>
         <div className="copy-container" onClick={() => navigator.clipboard.writeText('pcminfanta@gmail.com')}>
           <img src="/assets/copy.svg" alt="copy" />
