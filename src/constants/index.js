@@ -36,7 +36,7 @@ export const clientReviews = [
     img: 'pic/pastora-dez.png',
     review:
       'Ang pananampalataya ay ang katiyakan na mangyayari ang mga bagay na inaasahan, at ang katunayan ng mga bagay na hindi nakikita.',
-  },
+  }, /*
   {
     id: 3,
     name: 'John Dohsas',
@@ -52,7 +52,7 @@ export const clientReviews = [
     img: 'assets/review4.png',
     review:
       'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-  },
+  },*/
 ];
 
 export const myProjects = [
