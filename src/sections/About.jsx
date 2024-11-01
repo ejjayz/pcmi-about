@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { clientReviews } from '../constants/index.js'; // Adjusted import path
 import Button from '../components/Button.jsx';
 
 const About = () => {
@@ -47,9 +48,24 @@ const About = () => {
           </div>
         </div>
         
+        {/* Client Reviews Section */}
         <div className="xl:col-span-2 xl:row-span-3">
-           <div className="grid-container flex flex-col items-center">
-    <img src="pic/cross1.svg" alt="grid-3" className="w-[30%] sm:h-[266px] h-fit object-contain" />
+          <div className="grid-container flex flex-col items-center">
+            <h2 className="grid-headtext">Client Reviews</h2>
+            {clientReviews.filter(review => review.name === 'Ptr. Manny Dimasaka' || review.name === 'Ptra. Dez Dimasaka').map(review => (
+              <div key={review.id} className="review-container mb-4">
+                <img src={review.img} alt={review.name} className="w-16 h-16 rounded-full" />
+                <p className="font-bold">{review.name}</p>
+                <p className="italic">{review.position}</p>
+                <p className="mt-2">{review.review}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="xl:col-span-2 xl:row-span-3">
+          <div className="grid-container flex flex-col items-center">
+            <img src="pic/cross1.svg" alt="grid-3" className="w-[30%] sm:h-[266px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">Get Involved</p>
               <p className="grid-subtext">
