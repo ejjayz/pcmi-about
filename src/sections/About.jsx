@@ -53,23 +53,7 @@ const About = () => {
           <Clients /> {/* This will render the Church Leadership section */}
         </div>
 
-        <div className="xl:col-span-1 xl:row-span-2">
-          <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-            <img
-              src="pic/contact1-unscreen.gif"
-              alt="grid-4"
-              style={{ width: '50%', height: 'auto' }}
-              className="md:h-[126px] sm:h-[276px] h-fit object-cover sm:object-top"
-            />
-            <div className="space-y-2">
-              <p className="grid-subtext text-center">Contact Us</p>
-              <div className="copy-container" onClick={handleCopy}>
-                <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">pcminfanta@gmail.com</p>
-              </div>
-            </div>
-          </div>
-        </div>
+       
       </div>
     </section>
   );
