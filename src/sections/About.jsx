@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
 import Clients from './Clients'; // Import the Clients component
 
@@ -48,29 +47,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <div className="col-span-1 xl:row-span-4">
-          <div className="grid-container">
-            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-              <Globe
-                height={326}
-                width={326}
-                backgroundColor="rgba(0, 0, 0, 0)"
-                backgroundImageOpacity={0.5}
-                showAtmosphere
-                showGraticules
-                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
-                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
-              />
-            </div>
-            <div>
-              <p className="grid-headtext">"In the world you will have tribulation; but take courage, I have overcome the world."</p>
-              <p className="grid-subtext">— John 16:33</p>
-              <Button name="Contact Us" isBeam containerClass="w-full mt-10" />
-            </div>
-          </div>
-        </div>
-        
+       
         {/* Insert the Clients component here */}
         <div className="xl:col-span-2 xl:row-span-3">
           <Clients /> {/* This will render the Church Leadership section */}
