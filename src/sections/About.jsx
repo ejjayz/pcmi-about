@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Button from '../components/Button.jsx';
 import Clients from './Clients'; // Import the Clients component
+import Ministries from './Ministries'; // Import the Ministries component
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -69,6 +70,11 @@ const About = () => {
               </div>
             </div>
           </div>
+        </div>
+
+        {/* Insert the Ministries component here */}
+        <div className="xl:col-span-3">
+          <Ministries /> {/* This will render the Ministries section */}
         </div>
       </div>
     </section>
