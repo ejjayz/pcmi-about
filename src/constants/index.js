@@ -1,4 +1,4 @@
-import ContactPcmi from './sections/ContactPcmi'; // Make sure the path is correct
+import ContactPcmi from '../sections/ContactPcmi'; // Make sure the path is correct
 
 export const navLinks = [ 
   {
