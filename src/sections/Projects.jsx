@@ -82,7 +82,7 @@ const Projects = () => {
         </div>
 
         {/* ContactPcmi component placed here with margin for spacing */}
-        <div className="mt-10"> {/* Added margin-top for spacing */}
+        <div className="mt-2"> {/* Added margin-top for spacing */}
           <ContactPcmi />
         </div>
 
