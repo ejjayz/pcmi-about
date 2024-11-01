@@ -95,6 +95,15 @@ const Projects = () => {
           </Canvas>
         </div>
       </div>
+
+      {/* Contact Us Section Added Here */}
+      <div className="flex flex-col items-center mt-10">
+        <p className="grid-subtext text-center">Contact Us</p>
+        <div className="copy-container" onClick={() => navigator.clipboard.writeText('pcminfanta@gmail.com')}>
+          <img src="/assets/copy.svg" alt="copy" />
+          <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">pcminfanta@gmail.com</p>
+        </div>
+      </div>
     </section>
   );
 };
