@@ -1,20 +1,21 @@
-import { myProjects } from '../constants/index.js';
+import React from 'react';
+import { myProjects } from '../constants'; // Adjust the path as necessary
 
 const Ministries = () => {
   return (
-    <section className="c-space my-20">
-      <h3 className="head-text">Our Ministries</h3>
-      <div className="ministry-container">
-        {myProjects.map((ministry) => (
-          <div key={ministry.title} className="ministry">
-            <h4 className="ministry-title">{ministry.title}</h4>
-            <p className="ministry-desc">{ministry.desc}</p>
-            <p className="ministry-subdesc">{ministry.subdesc}</p>
-            <a href={ministry.href} className="ministry-link">Learn More</a>
+    <div className="ministry-section">
+      <h2 className="grid-headtext">Our Ministries</h2>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {myProjects.map((project) => (
+          <div key={project.title} className="ministry-card">
+            <img src={project.logo} alt={project.title} style={project.logoStyle} />
+            <h3>{project.title}</h3>
+            <p>{project.desc}</p>
+            <a href={project.href} className="btn">Learn More</a>
           </div>
         ))}
       </div>
-    </section>
+    </div>
   );
 };
 
