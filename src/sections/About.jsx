@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Button from '../components/Button.jsx';
 import Clients from './Clients'; // Import the Clients component
 import Ministries from '../sections/Ministries'; // Import the Ministries component
-import { myProjects } from '../constants'; // Ensure this path is correct
+import { myProjects } from '../sections'; // Ensure this path is correct
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
