@@ -209,8 +209,6 @@ tags: [
     ],
   },
 
-
-export { ContactPcmi }; 
  /*
   {
     title: 'Imaginify - AI Photo Manipulation App',
@@ -250,6 +248,10 @@ export { ContactPcmi };
     ],
   },*/
 ];
+
+
+export { ContactPcmi }; 
+
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
