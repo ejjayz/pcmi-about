@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
+import Clients from './Clients'; // Import the Clients component
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -69,19 +70,12 @@ const About = () => {
             </div>
           </div>
         </div>
+        
+        {/* Insert the Clients component here */}
         <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
-            <div>
-<p className="grid-headtext">Get Involved</p>
-              <p className="grid-subtext">
-              
-We welcome everyone to join our church and partake in our various ministries. Whether looking for spiritual growth, fellowship, or ways to serve the Lord, Pag-ibig Christian Ministries Infanta Quezon has a place for you.
-
-              </p>
-            </div>
-          </div>
+          <Clients /> {/* This will render the Church Leadership section */}
         </div>
+
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <img
