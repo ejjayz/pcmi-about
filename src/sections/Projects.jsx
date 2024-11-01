@@ -1,4 +1,4 @@
- import gsap from 'gsap';
+import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
@@ -7,7 +7,7 @@ import { Center, OrbitControls } from '@react-three/drei';
 import { myProjects } from '../constants/index.js';
 import CanvasLoader from '../components/Loading.jsx';
 import DemoComputer from '../components/DemoComputer.jsx';
-import ContactPcmi from './ContactPcmi'; // Adjusted import path to reflect same directory
+import ContactPcmi from './ContactPcmi'; // Importing the ContactPcmi component
 
 const projectCount = myProjects.length;
 
@@ -80,7 +80,11 @@ const Projects = () => {
             </button>
           </div>
         </div>
-  <ContactPcmi />
+
+        {/* ContactPcmi component placed here with margin for spacing */}
+        <div className="mt-10"> {/* Added margin-top for spacing */}
+          <ContactPcmi />
+        </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
           <Canvas>
