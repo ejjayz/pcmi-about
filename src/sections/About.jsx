@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { clientReviews } from '../constants/index.js'; // Adjusted import path
+import Globe from 'react-globe.gl';
 import Button from '../components/Button.jsx';
 
 const About = () => {
@@ -18,7 +18,7 @@ const About = () => {
       <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="pic/logo.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
+            <img src="assets/pcmi-logo.png" alt="grid-1" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">Who we are?</p>
               <p className="grid-subtext">
@@ -27,55 +27,61 @@ const About = () => {
             </div>
           </div>
         </div>
-        
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/pcmi1.png" alt="grid-2" className="w-[150%] sm:h-[276px] h-fit object-contain" />
+            <img src="assets/pcmi1.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext mb-8">Gathering Schedules</p>
-              <p className="grid-subtext mb-2 mt-4 ml-6">
+              <p className="grid-subtext mb-2 mt-4 ml-8">
                 • Sunday Worship Service - 9 AM | IN-PERSON
               </p>
-              <p className="grid-subtext mb-2 ml-6">
+              <p className="grid-subtext mb-2 ml-8">
                 • Located at Purok Langka Brgy. Binulasan, Infanta, Quezon
               </p>
-              <p className="grid-subtext mb-2 ml-6">
+              <p className="grid-subtext mb-2 ml-8">
                 • Youth Fellowship (Every First Sunday of the Month)
               </p>
-              <p className="grid-subtext mb-4 ml-6">
+              <p className="grid-subtext mb-4 ml-8">
                 • Kamustahan 6PM | ONLINE, Every Saturday
               </p>
             </div>
           </div>
         </div>
-
-        {/* Client Reviews Section - Moved Here */}
-        <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container flex flex-col items-center">
-            <h2 className="grid-headtext">Client Reviews</h2>
-            {clientReviews.filter(review => review.name === 'Ptr. Manny Dimasaka' || review.name === 'Ptra. Dez Dimasaka').map(review => (
-              <div key={review.id} className="review-container mb-4">
-                <img src={review.img} alt={review.name} className="w-16 h-16 rounded-full" />
-                <p className="font-bold">{review.name}</p>
-                <p className="italic">{review.position}</p>
-                <p className="mt-2">{review.review}</p>
-              </div>
-            ))}
+        <div className="col-span-1 xl:row-span-4">
+          <div className="grid-container">
+            <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
+              <Globe
+                height={326}
+                width={326}
+                backgroundColor="rgba(0, 0, 0, 0)"
+                backgroundImageOpacity={0.5}
+                showAtmosphere
+                showGraticules
+                globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
+                bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
+                labelsData={[{ lat: 40, lng: -100, text: 'Rjieka, Croatia', color: 'white', size: 15 }]}
+              />
+            </div>
+            <div>
+              <p className="grid-headtext">"In the world you will have tribulation; but take courage, I have overcome the world."</p>
+              <p className="grid-subtext">— John 16:33</p>
+              <Button name="Contact Us" isBeam containerClass="w-full mt-10" />
+            </div>
           </div>
         </div>
-
         <div className="xl:col-span-2 xl:row-span-3">
-          <div className="grid-container flex flex-col items-center">
-            <img src="pic/cross1.svg" alt="grid-3" className="w-[30%] sm:h-[266px] h-fit object-contain" />
+          <div className="grid-container">
+            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
             <div>
-              <p className="grid-headtext">Get Involved</p>
+<p className="grid-headtext">Get Involved</p>
               <p className="grid-subtext">
-                We welcome everyone to join our church and partake in our various ministries. Whether looking for spiritual growth, fellowship, or ways to serve the Lord, Pag-ibig Christian Ministries Infanta Quezon has a place for you.
+              
+We welcome everyone to join our church and partake in our various ministries. Whether looking for spiritual growth, fellowship, or ways to serve the Lord, Pag-ibig Christian Ministries Infanta Quezon has a place for you.
+
               </p>
             </div>
           </div>
         </div>
-
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <img
