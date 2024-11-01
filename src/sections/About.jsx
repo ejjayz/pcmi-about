@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import Button from '../components/Button.jsx';
 import Clients from './Clients'; // Import the Clients component
-import Ministries from './Ministries'; // Import the Ministries component
+import Ministries from '../components/Ministries'; // Import the Ministries component
+import { myProjects } from '../constants'; // Ensure this path is correct
 
 const About = () => {
   const [hasCopied, setHasCopied] = useState(false);
@@ -54,6 +55,11 @@ const About = () => {
           <Clients /> {/* This will render the Church Leadership section */}
         </div>
 
+        {/* Insert the Ministries component here */}
+        <div className="xl:col-span-2 xl:row-span-3">
+          <Ministries /> {/* New Ministries section */}
+        </div>
+
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <img
@@ -70,11 +76,6 @@ const About = () => {
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Insert the Ministries component here */}
-        <div className="xl:col-span-3">
-          <Ministries /> {/* This will render the Ministries section */}
         </div>
       </div>
     </section>
