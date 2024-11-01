@@ -1,4 +1,4 @@
-import ContactPcmi from './sections/ContactPcmi';
+import ContactPcmi from './sections/ContactPcmi'; // Make sure the path is correct
 
 export const navLinks = [ 
   {
@@ -38,36 +38,19 @@ export const clientReviews = [
     img: 'pic/pastora-dez.png',
     review:
       'Ang pananampalataya ay ang katiyakan na mangyayari ang mga bagay na inaasahan, at ang katunayan ng mga bagay na hindi nakikita.',
-  }, /*
-  {
-    id: 3,
-    name: 'John Dohsas',
-    position: 'Project Manager at UrbanTech ',
-    img: 'assets/review3.png',
-    review:
-      'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
   },
-  {
-    id: 4,
-    name: 'Ether Smith',
-    position: 'CEO of BrightStar Enterprises',
-    img: 'assets/review4.png',
-    review:
-      'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-  },*/
 ];
 
 export const myProjects = [
   {
     title: 'Music Ministry',
     desc: 'Umawit sa kagalakan ang lahat ng mga bansa! Si Yahweh ay papurihan, paglingkuran Siyang kusa; lumapit sa presensya Niya at umawit na may tuwa!',
-    subdesc:
-      '— Awit 100:1-2',
+    subdesc: '— Awit 100:1-2',
     href: 'https://www.facebook.com/profile.php?id=100064727016290',
     texture: '/textures/project/project1.mp4',
     logo: '/svg/music.svg',
     logoStyle: {
-    backgroundColor: '#2A1816',
+      backgroundColor: '#2A1816',
       border: '0.3px solid white',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
@@ -98,8 +81,7 @@ export const myProjects = [
   {
     title: 'Kids Ministry',
     desc: 'Ituro sa bata ang daang dapat niyang lakaran, at hanggang sa paglaki\'y di niya ito malilimutan.',
-    subdesc:
-      '– Kawikaan 22:6',
+    subdesc: '– Kawikaan 22:6',
     href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
     texture: '/textures/project/project2.mp4',
     logo: '/svg/kids.svg',
@@ -109,7 +91,6 @@ export const myProjects = [
       boxShadow: '0px 0px 60px 0px #2F6DB54D',
     },
     spotlight: '/assets/spotlight2.png',
-  
     tags: [
       {
         id: 1,
@@ -134,21 +115,20 @@ export const myProjects = [
     ],
   },
   {
-
-   title: 'Creative Design Ministry',
-   desc: 'Binigyan sila ng Panginoon ng kakayahang gumawa ng lahat ng klase ng gawain: ang pagdidisenyo, ang paggawa ng tela, ang pagbuburda ng pinong telang linen at ng lanang kulay asul, ube at pula. Kaya nilang gawin ang kahit anong klase ng gawain, at napakahuhusay nilang gumawa.',
-   subdesc: '– Exodo 35:35',
-   href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
-   texture: '/textures/project/project3.mp4',
-   logo: '/svg/creative.svg',
-   logoStyle: {
-     backgroundColor: '#13202F',
-     border: '0.3px solid white',
-     boxShadow: '0px 0px 60px 0px #2F6DB54D',
-     transform: 'scale(1.1)', // Zoom effect
-   },
-   spotlight: '/assets/spotlight2.png',
-tags: [
+    title: 'Creative Design Ministry',
+    desc: 'Binigyan sila ng Panginoon ng kakayahang gumawa ng lahat ng klase ng gawain: ang pagdidisenyo, ang paggawa ng tela, ang pagbuburda ng pinong telang linen at ng lanang kulay asul, ube at pula. Kaya nilang gawin ang kahit anong klase ng gawain, at napakahuhusay nilang gumawa.',
+    subdesc: '– Exodo 35:35',
+    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    texture: '/textures/project/project3.mp4',
+    logo: '/svg/creative.svg',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.3px solid white',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+      transform: 'scale(1.1)', // Zoom effect
+    },
+    spotlight: '/assets/spotlight2.png',
+    tags: [
       {
         id: 1,
         name: 'React.js',
@@ -174,8 +154,7 @@ tags: [
   {
     title: 'Tech Ministry',
     desc: 'At sumaamin nawa ang kagandahan ng Panginoong aming Dios: at iyong itatag sa amin ang gawa ng aming mga kamay; Oo, ang gawa ng aming mga kamay ay itatag mo.',
-    subdesc:
-      '– Mga Awit 90:17',
+    subdesc: '– Mga Awit 90:17',
     href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
     texture: '/textures/project/project4.mp4',
     logo: '/svg/tech.svg',
@@ -208,50 +187,10 @@ tags: [
       },
     ],
   },
-
- /*
-  {
-    title: 'Imaginify - AI Photo Manipulation App',
-    desc: 'Imaginify is a groundbreaking Software-as-a-Service application that empowers users to create stunning photo manipulations using AI technology. With features like AI-driven image editing, a payments system, and a credits-based model.',
-    subdesc:
-      'Built with Next.js 14, Cloudinary AI, Clerk, and Stripe, Imaginify combines cutting-edge technology with a user-centric approach. It can be turned into a side income or even a full-fledged business.',
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
-    texture: '/textures/project/project5.mp4',
-    logo: '/assets/project-logo5.png',
-    logoStyle: {
-      backgroundColor: '#1C1A43',
-      border: '0.2px solid #252262',
-      boxShadow: '0px 0px 60px 0px #635BFF4D',
-    },
-    spotlight: '/assets/spotlight5.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      }, 
-    ],
-  },*/
 ];
 
-
-export { ContactPcmi }; 
-
+// Exporting the ContactPcmi component
+export { ContactPcmi };
 
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
   return {
