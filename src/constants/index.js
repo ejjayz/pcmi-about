@@ -1,3 +1,5 @@
+import ContactPcmi from './sections/ContactPcmi';
+
 export const navLinks = [ 
   {
     id: 1,
@@ -207,6 +209,8 @@ tags: [
     ],
   },
 
+
+export { ContactPcmi }; 
  /*
   {
     title: 'Imaginify - AI Photo Manipulation App',
