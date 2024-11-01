@@ -49,7 +49,7 @@ const About = () => {
         
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container">
-            <img src="assets/grid3.png" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
+            <img src="pic/cross1.svg" alt="grid-3" className="w-full sm:h-[266px] h-fit object-contain" />
             <div>
               <p className="grid-headtext">Get Involved</p>
               <p className="grid-subtext">
