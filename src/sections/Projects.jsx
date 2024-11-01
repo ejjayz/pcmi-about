@@ -81,10 +81,14 @@ const Projects = () => {
           </div>
         </div>
 
-        {/* ContactPcmi component placed here with margin for spacing */}
-        <div className="mt-10"> {/* Added margin-top for spacing */}
-          <ContactPcmi />
+         {/* Contact Us Section Added Here */}
+      <div className="flex flex-col items-center mt-10 z-10 relative"> {/* Added z-index and relative positioning */}
+        <p className="grid-subtext text-center">Contact Us</p>
+        <div className="copy-container" onClick={() => navigator.clipboard.writeText('pcminfanta@gmail.com')}>
+          <img src="/assets/copy.svg" alt="copy" />
+          <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">pcminfanta@gmail.com</p>
         </div>
+      </div>
 
         <div className="border border-black-300 bg-black-200 rounded-lg h-96 md:h-full">
           <Canvas>
