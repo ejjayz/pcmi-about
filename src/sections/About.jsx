@@ -76,6 +76,10 @@ const About = () => {
             </div>
           </div>
         </div>
+
+
+ /*
+
         {/* Duplicated Globe Section at the End */}
         <div className="col-span-1 xl:row-span-4">
           <div className="grid-container">
@@ -98,7 +102,11 @@ const About = () => {
               <Button name="Contact Us" isBeam containerClass="w-full mt-10" />
             </div>
           </div>
-        </div>
+        </div> 
+*/
+
+
+
       </div>
     </section>
   );
