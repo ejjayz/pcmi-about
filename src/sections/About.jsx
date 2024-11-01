@@ -27,6 +27,7 @@ const About = () => {
             </div>
           </div>
         </div>
+        
         <div className="col-span-1 xl:row-span-3">
           <div className="grid-container">
             <img src="assets/pcmi1.png" alt="grid-2" className="w-[150%] sm:h-[276px] h-fit object-contain" />
@@ -47,8 +48,8 @@ const About = () => {
             </div>
           </div>
         </div>
-        
-        {/* Client Reviews Section */}
+
+        {/* Client Reviews Section - Moved Here */}
         <div className="xl:col-span-2 xl:row-span-3">
           <div className="grid-container flex flex-col items-center">
             <h2 className="grid-headtext">Client Reviews</h2>
@@ -74,6 +75,7 @@ const About = () => {
             </div>
           </div>
         </div>
+
         <div className="xl:col-span-1 xl:row-span-2">
           <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <img
