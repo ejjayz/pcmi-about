@@ -12,7 +12,7 @@ const ContactPcmi = () => {
   };
 
   return (
-    <div className="xl:col-span-1 xl:row-span-2 mb-10">
+    <div className="xl:col-span-1 xl:row-span-2 mb-10 mt-0">
           <div className="grid-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
             <img
               src="pic/contact1-unscreen.gif"
