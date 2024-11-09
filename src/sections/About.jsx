@@ -32,20 +32,20 @@ const About = () => {
             <img src="pic/sched1.png" alt="grid-2" className="w-full sm:h-[276px] h-fit object-contain" />
             <div>
               <p className="grid-headtext mb-8">Gathering Schedules</p>
-              <p className="grid-subtext mb-2 mt-4 ml-4">
+              <p className="grid-subtext mb-2 mt-4 ml-6">
                 • Sunday Worship Service - 9 AM | In-person
               </p>
              
-              <p className="grid-subtext mb-4 ml-4">
+              <p className="grid-subtext mb-4 ml-6">
                 • Discipleship - 9 AM | Every Thursday
               </p>
-              <p className="grid-subtext mb-2 ml-4">
+              <p className="grid-subtext mb-2 ml-6">
                 • Youth Fellowship (Every First Sunday of the Month)
               </p>
-              <p className="grid-subtext mb-4 ml-4">
+              <p className="grid-subtext mb-4 ml-6">
                 • Kamustahan 6PM | Online, Every Saturday
               </p>
-                <p className="grid-subtext mb-2 ml-4">
+                <p className="grid-subtext mb-2 ml-6">
                 • Located at Purok Langka Brgy. Binulasan, Infanta, Quezon
               </p>
 
