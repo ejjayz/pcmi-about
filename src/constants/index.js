@@ -29,7 +29,7 @@ export const clientReviews = [
     name: 'Ps. Manny Dimasaka',
     position: 'Local Church Head Pastor',
     img: 'pic/pastor-manny.png',
-    review: 'Maraming matatagpuang kayamanan dito sa mundo subalit mapalad tayo dahil natagpuan natin ang tunay na Kayamanan, na walang iba kun\'di si Kristo.',
+    review: '  Maraming matatagpuang kayamanan dito sa mundo subalit mapalad tayo dahil natagpuan natin ang tunay na Kayamanan, na walang iba kun\'di si Kristo.  ',
     profileLink: 'https://www.facebook.com/profile.php?id=100084821967511'
   },
   {
@@ -37,7 +37,7 @@ export const clientReviews = [
     name: 'Ps. Dez Dimasaka',
     position: 'Local Church Head Pastor',
     img: 'pic/pastora-dez.png',
-    review: 'Ayusin ang pakikinig ng Instructions, para magkaroon ng maayos na Actions.',
+    review: '  Ayusin ang pakikinig ng Instructions, para magkaroon ng maayos na Actions.  ',
     profileLink: 'https://www.facebook.com/mandez.dimasaka'
   },
   {
@@ -45,7 +45,7 @@ export const clientReviews = [
     name: 'Bro. Marlon Alloso',
     position: 'Music Ministry Lead',
     img: 'pic/papa.png',
-    review: 'Ang pananampalataya ay ang katiyakan na mangyayari ang mga bagay na inaasahan, at ang katunayan ng mga bagay na hindi nakikita.',
+    review: '  Ang pananampalataya ay ang katiyakan na mangyayari ang mga bagay na inaasahan, at ang katunayan ng mga bagay na hindi nakikita.  ',
     profileLink: 'https://www.facebook.com/marlonalloso007'	
   },
 ];
