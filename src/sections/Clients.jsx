@@ -3,7 +3,7 @@ import { clientReviews } from '../constants/index.js';
 const handleClickWithDelay = (url) => {
   setTimeout(() => {
     window.open(url, '_blank', 'noopener,noreferrer');
-  }, 1000); // 2000 milliseconds = 2 seconds
+  }, 500); // Profile Click Delay
 };
 
 const Clients = () => {
