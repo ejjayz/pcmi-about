@@ -4,11 +4,11 @@ const ContactPcmi = () => {
   const [hasCopied, setHasCopied] = useState(false);
 
   const handleCopy = () => {
-    navigator.clipboard.writeText('pcminfanta@gmail.com');
+    navigator.clipboard.writeText('09982238464');
     setHasCopied(true);
     setTimeout(() => {
       setHasCopied(false);
-    }, 2000);
+    }, 3000);
   };
 
   return (
@@ -25,7 +25,7 @@ const ContactPcmi = () => {
             <p className="contact text-center">Contact Us</p>
             <div className="copy-container" onClick={handleCopy}>
               <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-              <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">pcminfanta@gmail.com</p>
+              <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">(+63) 998-223-8464</p>
             </div> {/* Closing div for copy-container */}
           </div>
         </div>
