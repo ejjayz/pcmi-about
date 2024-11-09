@@ -170,7 +170,7 @@ export const myProjects = [
     texture: '/textures/project/project4.mp4',
     logo: '/svg/tech.svg',
     logoStyle: {
-      backgroundColor: '#3c1f47',
+      backgroundColor: '#3d1e4a',
       border: '0.3px solid white',
       boxShadow: '0px 0px 60px 0px #2F67B64D',
     },
