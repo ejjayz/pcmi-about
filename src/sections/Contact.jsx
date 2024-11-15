@@ -107,7 +107,7 @@ const Contact = () => {
         <div className="contact-container">
           <h3 className="head-text mt-3">Let's talk</h3>
           <p className="text-lg text-white-600 mt-3">
-            If you have any questions or suggestions, just send us a message. We'd love to hear from you!
+            If you have any questions or suggestions, just send us a message. We'll truly appreciate!
           </p>
           <form ref={formRef} onSubmit={handleSubmit} className="mt-12 flex flex-col space-y-7">
             <label className="space-y-3">
