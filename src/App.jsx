@@ -18,7 +18,7 @@ const App = () => {
       <WorkExperience />
       <Contact />
       <Footer />
-      <Chatbot /> {/* Add the Chatbot component here */}
+      <Chatbot /> {/* Chatbot component */}
     </main>
   );
 };
