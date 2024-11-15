@@ -6,7 +6,7 @@ import Navbar from './sections/Navbar.jsx';
 import Contact from './sections/Contact.jsx';
 import Projects from './sections/Projects.jsx';
 import WorkExperience from './sections/Experience.jsx';
-// import Chatbot from './Chatbot.jsx'; // Import the new Chatbot component
+import Chatbot from './Chatbot.jsx'; // Import the new Chatbot component
 
 const App = () => {
   return (
