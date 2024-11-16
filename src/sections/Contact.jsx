@@ -19,6 +19,18 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Check if the mobile number matches the pattern
+    const mobilePattern = /^(09\d{9})|(\+63\d{11})$/;
+    if (!mobilePattern.test(form.mobile)) {
+      showAlert({
+        show: true,
+        text: "Please enter a valid mobile number format: '09XXXXXXXXXX' or '+63XXXXXXXXXXX'.",
+        type: 'danger',
+      });
+      return; // Stop the function if the format is invalid
+    }
+
     setLoading(true);
 
     emailjs.send(
@@ -124,16 +136,16 @@ const Contact = () => {
             </label>
             <label className="space-y-3">
               <span className="field-label">Mobile Number</span>
-             <input
-  type="tel"
-  name="mobile"
-  value={form.mobile}
-  onChange={handleChange}
-  required
-  className="field-input"
-  placeholder="ex., 09171234567"
-  pattern="^(09\d{9})|(\+63\d{10})$"
-/>
+              <input
+                type="tel"
+                name="mobile"
+                value={form.mobile}
+                onChange={handleChange}
+                required
+                className="field-input"
+                placeholder="ex., 09171234567 or +63123456789"
+                pattern="^(09\d{9})|(\+63\d{11})$"
+              />
             </label>
             <label className="space-y-3">
               <span className="field-label">Your message</span>
