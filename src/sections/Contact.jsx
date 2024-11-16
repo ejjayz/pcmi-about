@@ -143,8 +143,8 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., 09171234567 or +63123456789"
-                pattern="^(09\d{9})|(\+63\d{11})$"
+                placeholder="ex., 09171234567"
+                pattern="^(09\d{9})|(\+63\d{10})$"
               />
             </label>
             <label className="space-y-3">
