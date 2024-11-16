@@ -124,7 +124,7 @@ const Contact = () => {
             </label>
             <label className="space-y-3">
               <span className="field-label">Mobile Number</span>
-              <input
+             <input
   type="tel"
   name="mobile"
   value={form.mobile}
@@ -132,7 +132,7 @@ const Contact = () => {
   required
   className="field-input"
   placeholder="ex., 09171234567"
-  pattern="(^09[0-9]{9}$)|(^\+63[0-9]{11}$)"
+  pattern="^(09\d{9})|(\+63\d{11})$" // Updated pattern to ensure correct formats
 />
             </label>
             <label className="space-y-3">
