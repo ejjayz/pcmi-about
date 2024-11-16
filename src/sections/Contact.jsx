@@ -131,7 +131,7 @@ const Contact = () => {
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex. Enter your full name"
+                placeholder="Type your full name here"
               />
             </label>
             <label className="space-y-3">
