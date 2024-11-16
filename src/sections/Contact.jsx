@@ -21,7 +21,7 @@ const Contact = () => {
     e.preventDefault();
 
     // Check if the mobile number matches the pattern
-    const mobilePattern = /^(09\d{9})|(\+63\d{11})$/;
+    const mobilePattern = /^(09\d{9})|(\+63\d{10})$/;
     if (!mobilePattern.test(form.mobile)) {
       showAlert({
         show: true,
