@@ -11,7 +11,7 @@ const Contact = () => {
   const [loading, setLoading] = useState(false);
   const [isRedirecting, setIsRedirecting] = useState(false);
   const [isActive, setIsActive] = useState(false);
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
+  const [form, setForm] = useState({ name: '', mobile: '', message: '' });
 
   const handleChange = ({ target: { name, value } }) => {
     setForm({ ...form, [name]: value });
@@ -27,8 +27,8 @@ const Contact = () => {
       {
         from_name: form.name,
         to_name: 'Pcmi - Infanta',
-        from_email: form.email,
-        to_email: 'pcminfanta@gmail.com',
+        from_mobile: form.mobile,
+        to_mobile: '09982238464', // Update to the relevant mobile number
         message: form.message,
       },
       import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
@@ -43,7 +43,7 @@ const Contact = () => {
 
         setTimeout(() => {
           hideAlert(false);
-          setForm({ name: '', email: '', message: '' });
+          setForm({ name: '', mobile: '', message: '' });
         }, 3000);
       },
       (error) => {
@@ -59,23 +59,23 @@ const Contact = () => {
   };
 
   const handleRedirectClick = (e) => {
-  e.preventDefault();
-  setIsRedirecting(true);
+    e.preventDefault();
+    setIsRedirecting(true);
 
-  // Temporarily apply active class
-  const appButton = e.currentTarget;
-  appButton.classList.add('active');
+    // Temporarily apply active class
+    const appButton = e.currentTarget;
+    appButton.classList.add('active');
 
-  // Remove active class after a short delay to return to original size
-  setTimeout(() => {
-    appButton.classList.remove('active');
-  }, 200);
+    // Remove active class after a short delay to return to original size
+    setTimeout(() => {
+      appButton.classList.remove('active');
+    }, 200);
 
-  // Redirect after a delay
-  setTimeout(() => {
-    window.location.href = "https://pcmi-infanta.vercel.app";
-  }, 8000);
-};
+    // Redirect after a delay
+    setTimeout(() => {
+      window.location.href = "https://pcmi-infanta.vercel.app";
+    }, 8000);
+  };
 
   return (
     <section className="c-space my-20" id="contact">
@@ -123,15 +123,16 @@ const Contact = () => {
               />
             </label>
             <label className="space-y-3">
-              <span className="field-label">Email address</span>
+              <span className="field-label">Mobile Number</span>
               <input
-                type="email"
-                name="email"
-                value={form.email}
+                type="tel"
+                name="mobile"
+                value={form.mobile}
                 onChange={handleChange}
                 required
                 className="field-input"
-                placeholder="ex., juandelacruz@gmail.com"
+                placeholder="ex., 09171234567"
+                pattern="[0-9]{11}" // Ensure the user enters an 11-digit mobile number
               />
             </label>
             <label className="space-y-3">
@@ -151,19 +152,19 @@ const Contact = () => {
               <img src="/assets/arrow-up.png" alt="arrow-up" className="field-btn_arrow" />
             </button>
             <a
-  className={`app big gradient-background ${isActive ? 'active' : ''}`}
-  href="#"
-  onClick={handleRedirectClick}
-  style={{ width: 'auto' }}  // Allow auto width to match content size
->
-  {isRedirecting ? (
-    <div className="loading-container">
-      <img src="/gif/load.gif" alt="loading" className="loading" />
-    </div>
-  ) : (
-    "Continue to App"
-  )}
-</a>
+              className={`app big gradient-background ${isActive ? 'active' : ''}`}
+              href="#"
+              onClick={handleRedirectClick}
+              style={{ width: 'auto' }}  // Allow auto width to match content size
+            >
+              {isRedirecting ? (
+                <div className="loading-container">
+                  <img src="/gif/load.gif" alt="loading" className="loading" />
+                </div>
+              ) : (
+                "Continue to App"
+              )}
+            </a>
           </form>
         </div>
       </div>
