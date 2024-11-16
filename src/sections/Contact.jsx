@@ -49,6 +49,69 @@ const Contact = () => {
         setLoading(false);
         showAlert({
           show: true,
+          text: 'Thank you, yourTo ensure that the custom alert message replaces the default validation message ("Please match the requested format"), you need to prevent the browser's default validation from triggering. This is typically achieved by checking the validity of the input before the form is submitted and using a `setCustomValidity` method on the input element.
+
+Here’s how you can modify your code to achieve this:
+
+1. Use a `ref` to access the mobile input field.
+2. In the `handleSubmit` function, set a custom validity message if the input is invalid.
+3. Prevent the form submission if the input is invalid, and show your custom alert.
+
+Here’s the updated code:
+
+```javascript
+import emailjs from '@emailjs/browser';
+import { useRef, useState } from 'react';
+import Globe from 'react-globe.gl';
+import useAlert from '../hooks/useAlert.js';
+import Alert from '../components/Alert.jsx';
+import Button from '../components/Button.jsx';
+
+const Contact = () => {
+  const formRef = useRef();
+  const mobileRef = useRef(); // Ref for mobile input
+  const { alert, showAlert, hideAlert } = useAlert();
+  const [loading, setLoading] = useState(false);
+  const [isRedirecting, setIsRedirecting] = useState(false);
+  const [isActive, setIsActive] = useState(false);
+  const [form, setForm] = useState({ name: '', mobile: '', message: '' });
+
+  const handleChange = ({ target: { name, value } }) => {
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Check if the mobile number matches the pattern
+    const mobilePattern = /^(09\d{9})|(\+63\d{11})$/;
+    if (!mobilePattern.test(form.mobile)) {
+      // Set custom validity message
+      mobileRef.current.setCustomValidity("Number Format error: Please enter a valid mobile number format: '09XXXXXXXXXX' or '+63XXXXXXXXXXX'.");
+      mobileRef.current.reportValidity(); // Will trigger the default alert
+      return; // Stop the function if the format is invalid
+    } else {
+      mobileRef.current.setCustomValidity(""); // Clear custom validity
+    }
+
+    setLoading(true);
+
+    emailjs.send(
+      import.meta.env.VITE_APP_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_APP_EMAILJS_TEMPLATE_ID,
+      {
+        from_name: form.name,
+        to_name: 'Pcmi - Infanta',
+        from_mobile: form.mobile,
+        to_mobile: '09982238464', // Update to the relevant mobile number
+        message: form.message,
+      },
+      import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
+    ).then(
+      () => {
+        setLoading(false);
+        showAlert({
+          show: true,
           text: 'Thank you, your message has been sent 😇',
           type: 'success',
         });
@@ -145,6 +208,7 @@ const Contact = () => {
                 className="field-input"
                 placeholder="ex., 09171234567"
                 pattern="^(09\d{9})|(\+63\d{10})$"
+                ref={mobileRef} // Attach the ref here
               />
             </label>
             <label className="space-y-3">
