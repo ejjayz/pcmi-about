@@ -125,15 +125,15 @@ const Contact = () => {
             <label className="space-y-3">
               <span className="field-label">Mobile Number</span>
               <input
-                type="tel"
-                name="mobile"
-                value={form.mobile}
-                onChange={handleChange}
-                required
-                className="field-input"
-                placeholder="ex., 09171234567"
-                pattern="[0-9]{11}" // Ensure the user enters an 11-digit mobile number
-              />
+  type="tel"
+  name="mobile"
+  value={form.mobile}
+  onChange={handleChange}
+  required
+  className="field-input"
+  placeholder="ex., 09171234567"
+  pattern="(^09[0-9]{9}$)|(^\+63[0-9]{11}$)"
+/>
             </label>
             <label className="space-y-3">
               <span className="field-label">Your message</span>
