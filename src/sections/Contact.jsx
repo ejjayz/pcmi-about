@@ -132,7 +132,7 @@ const Contact = () => {
   required
   className="field-input"
   placeholder="ex., 09171234567"
-  pattern="^(09\d{9})|(\+63\d{11})$" // Updated pattern to ensure correct formats
+  pattern="^(09\d{9})|(\+63\d{10})$"
 />
             </label>
             <label className="space-y-3">
