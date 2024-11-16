@@ -19,13 +19,13 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
     // Check if the mobile number matches the pattern
     const mobilePattern = /^(09\d{9})|(\+63\d{11})$/;
     if (!mobilePattern.test(form.mobile)) {
       showAlert({
         show: true,
-        text: "Please enter a valid mobile number format: '09XXXXXXXXXX' or '+63XXXXXXXXXXX'.",
+        text: "Number Format error: Please enter a valid mobile number format: '09XXXXXXXXXX' or '+63XXXXXXXXXXX'.",
         type: 'danger',
       });
       return; // Stop the function if the format is invalid
