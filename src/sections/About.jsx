@@ -37,7 +37,7 @@ const About = () => {
               </p>
              
               <p className="grid-subtext mb-4 ml-6">
-                • Discipleship - 9 AM | Every Thursday
+                • Discipleship - 9 AM | Every Wednesday
               </p>
               <p className="grid-subtext mb-2 ml-6">
                 • Youth Fellowship (Every First Sunday of the Month)
