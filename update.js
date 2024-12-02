@@ -59,6 +59,14 @@ window.onload = function() {
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
         " class="gradient-background">Update Now</a>
+        <br/><br/>
+        <button id="updateLaterBtn" style="
+            color: white;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+        ">Update Later</button>
     `;
 
     // Append the message div to the warning div
@@ -66,6 +74,11 @@ window.onload = function() {
 
     // Append the warning div to the body
     document.body.appendChild(warningDiv);
+
+    // Add event listener to the "Update Later" button
+    document.getElementById("updateLaterBtn").addEventListener("click", function() {
+        warningDiv.style.visibility = "hidden"; // Hide the warning div when "Update Later" is clicked
+    });
 
     // Check localStorage for the app version code
     const versionCode = localStorage.getItem("appilix_app_version_code");
