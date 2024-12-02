@@ -25,30 +25,18 @@ window.onload = function() {
     const styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = `
-        @keyframes gradientBackground {
-            0% { background-color: #ff9a9e; }
-            50% { background-color: #fad0c4; }
-            100% { background-color: #ff9a9e; }
+        @keyframes glowing {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .gradient-background {
+            background: linear-gradient(45deg, #3B5998, #8E44AD, #F39C12, #27AE60);
+            background-size: 400% 400%;
+            animation: glowing 3s ease-in-out infinite;
         }
     `;
     document.head.appendChild(styleSheet);
-
-    // Create the logo container
-    const logoContainer = document.createElement("div");
-    logoContainer.style.width = "100%";
-    logoContainer.style.display = "flex";
-    logoContainer.style.justifyContent = "center";
-    logoContainer.style.alignItems = "center";
-    logoContainer.style.marginBottom = "20px";
-
-    // Create the logo
-    const logo = document.createElement("img");
-    logo.src = "pic/pcmi-logo.png"; // Replace with your logo path
-    logo.alt = "App Logo";
-    logo.style.maxWidth = "100px";
-
-    // Append the logo to the logo container
-    logoContainer.appendChild(logo);
 
     // Create the content for the warning div
     const messageDiv = document.createElement("div");
@@ -69,12 +57,11 @@ window.onload = function() {
             border-radius: 5px;
             font-weight: bold;
             background-size: 400% 400%;
-            animation: gradientBackground 5s ease infinite;
-        ">Update Now</a>
+            animation: glowing 3s ease-in-out infinite;
+        " class="gradient-background">Update Now</a>
     `;
 
-    // Append the logo container and message div to the warning div
-    warningDiv.appendChild(logoContainer);
+    // Append the message div to the warning div
     warningDiv.appendChild(messageDiv);
 
     // Append the warning div to the body
