@@ -33,12 +33,22 @@ window.onload = function() {
     `;
     document.head.appendChild(styleSheet);
 
+    // Create the logo container
+    const logoContainer = document.createElement("div");
+    logoContainer.style.width = "100%";
+    logoContainer.style.display = "flex";
+    logoContainer.style.justifyContent = "center";
+    logoContainer.style.alignItems = "center";
+    logoContainer.style.marginBottom = "20px";
+
     // Create the logo
     const logo = document.createElement("img");
     logo.src = "pic/pcmi-logo.png"; // Replace with your logo path
     logo.alt = "App Logo";
     logo.style.maxWidth = "100px";
-    logo.style.marginBottom = "20px";
+
+    // Append the logo to the logo container
+    logoContainer.appendChild(logo);
 
     // Create the content for the warning div
     const messageDiv = document.createElement("div");
@@ -63,8 +73,8 @@ window.onload = function() {
         ">Update Now</a>
     `;
 
-    // Append the logo and message div to the warning div
-    warningDiv.appendChild(logo);
+    // Append the logo container and message div to the warning div
+    warningDiv.appendChild(logoContainer);
     warningDiv.appendChild(messageDiv);
 
     // Append the warning div to the body
@@ -77,4 +87,3 @@ window.onload = function() {
         warningDiv.style.visibility = "visible"; // Show the warning if version is less than the minimum required
     }
 };
-
