@@ -20,6 +20,7 @@ window.onload = function() {
     warningDiv.style.visibility = "hidden"; // Initially hidden
     warningDiv.style.padding = "20px"; // Add padding for responsiveness
     warningDiv.style.boxSizing = "border-box"; // Ensure padding does not affect size
+    warningDiv.style.transition = "opacity 0.5s"; // Add smooth transition for showing and hiding
 
     // Create keyframes for gradient background animation
     const styleSheet = document.createElement("style");
@@ -51,13 +52,14 @@ window.onload = function() {
         <p style="font-size: 18px; margin: 0 0 15px;">Hello everyone 👋, We have a new update. Pls update to continue. Thank you! ❤️</p>
         <a href="` + updateAppLink + `" style="
             display: inline-block;
-            padding: 10px 20px;
+            padding: 15px 30px;
             color: white; /* Change text color to white */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
+            font-size: 16px;
         " class="gradient-background">Update Now</a>
         <br/><br/>
         <button id="updateLaterBtn" style="
@@ -66,6 +68,7 @@ window.onload = function() {
             background: none;
             border: none;
             cursor: pointer;
+            font-size: 16px;
         ">Update Later</button>
     `;
 
@@ -77,7 +80,10 @@ window.onload = function() {
 
     // Add event listener to the "Update Later" button
     document.getElementById("updateLaterBtn").addEventListener("click", function() {
-        warningDiv.style.visibility = "hidden"; // Hide the warning div when "Update Later" is clicked
+        warningDiv.style.opacity = "0"; // Smooth transition for hiding the warning div
+        setTimeout(function() {
+            warningDiv.style.visibility = "hidden"; // Hide the warning div after the transition
+        }, 500); // Match the transition duration
     });
 
     // Check localStorage for the app version code
@@ -85,5 +91,8 @@ window.onload = function() {
 
     if (versionCode !== null && parseInt(versionCode) < minimumRequiredVersionCode) {
         warningDiv.style.visibility = "visible"; // Show the warning if version is less than the minimum required
+        setTimeout(function() {
+            warningDiv.style.opacity = "1"; // Smooth transition for showing the warning div
+        }, 10); // Slight delay to trigger the transition
     }
 };
