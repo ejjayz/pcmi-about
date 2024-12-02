@@ -4,24 +4,26 @@ window.onload = function() {
     const warningDiv = document.createElement("div");
 
     // Apply styles
-    warningDiv.style.position = "fixed";
-    warningDiv.style.top = "0";
-    warningDiv.style.left = "0";
-    warningDiv.style.width = "100%";
-    warningDiv.style.height = "100%";
-    warningDiv.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
-    warningDiv.style.color = "white";
-    warningDiv.style.display = "flex";
-    warningDiv.style.justifyContent = "center";
-    warningDiv.style.alignItems = "center";
-    warningDiv.style.flexDirection = "column";
-    warningDiv.style.zIndex = "1000";
-    warningDiv.style.textAlign = "center";
-    warningDiv.style.visibility = "hidden"; // Initially hidden
-    warningDiv.style.opacity = "0"; // Start hidden
-    warningDiv.style.transition = "opacity 0.3s ease-in-out"; // Add transition
-    warningDiv.style.padding = "20px"; // Add padding for responsiveness
-    warningDiv.style.boxSizing = "border-box"; // Ensure padding does not affect size
+    Object.assign(warningDiv.style, {
+        position: "fixed",
+        top: "0",
+        left: "0",
+        width: "100%",
+        height: "100%",
+        backgroundColor: "rgba(0, 0, 0, 0.9)",
+        color: "white",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        zIndex: "1000",
+        textAlign: "center",
+        visibility: "hidden", // Initially hidden
+        opacity: "0", // Start hidden
+        transition: "opacity 0.3s ease-in-out", // Add transition
+        padding: "20px", // Add padding for responsiveness
+        boxSizing: "border-box" // Ensure padding does not affect size
+    });
 
     // Create keyframes for gradient background animation
     const styleSheet = document.createElement("style");
@@ -51,25 +53,25 @@ window.onload = function() {
 
     // Create the content for the warning div
     const messageDiv = document.createElement("div");
-    messageDiv.style.backgroundColor = "#333";
-    messageDiv.style.padding = "20px";
-    messageDiv.style.borderRadius = "10px";
-    messageDiv.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
-    messageDiv.style.maxWidth = "500px";
-    messageDiv.style.width = "100%";
-    messageDiv.style.textAlign = "center"; // Center text inside the message div
+    Object.assign(messageDiv.style, {
+        backgroundColor: "#333",
+        padding: "20px",
+        borderRadius: "10px",
+        boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+        maxWidth: "500px",
+        width: "100%",
+        textAlign: "center" // Center text inside the message div
+    });
     messageDiv.innerHTML = `
         <p style="font-size: 18px; margin: 0 0 15px;">Hello everyone 👋, We have a new update. Pls update to continue. Thank you! ❤️</p>
-        <a href="` + updateAppLink + `" style="
+        <a href="` + updateAppLink + `" class="gradient-background" style="
             display: inline-block;
             padding: 10px 20px;
             color: white; /* Change text color to white */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
-            background-size: 400% 400%;
-            animation: glowing 3s ease-in-out infinite;
-        " class="gradient-background">Update Now</a>
+        ">Update Now</a>
         <br/><br/>
         <button id="updateLaterBtn" style="
             color: white;
