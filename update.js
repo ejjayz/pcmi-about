@@ -18,23 +18,33 @@ window.onload = function() {
     warningDiv.style.zIndex = "1000";
     warningDiv.style.textAlign = "center";
     warningDiv.style.visibility = "hidden"; // Initially hidden
+    warningDiv.style.opacity = "0"; // Start hidden
+    warningDiv.style.transition = "opacity 0.3s ease-in-out"; // Add transition
     warningDiv.style.padding = "20px"; // Add padding for responsiveness
     warningDiv.style.boxSizing = "border-box"; // Ensure padding does not affect size
-    warningDiv.style.transition = "opacity 0.5s"; // Add smooth transition for showing and hiding
 
     // Create keyframes for gradient background animation
     const styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = `
-        @keyframes glowing {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        @keyframes popIn {
+            0% { transform: scale(0.8); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+        @keyframes popOut {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(0.8); opacity: 0; }
         }
         .gradient-background {
             background: linear-gradient(45deg, #3B5998, #8E44AD, #F39C12, #27AE60);
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
+        }
+        .pop-in {
+            animation: popIn 0.3s ease-in-out forwards;
+        }
+        .pop-out {
+            animation: popOut 0.3s ease-in-out forwards;
         }
     `;
     document.head.appendChild(styleSheet);
@@ -52,14 +62,13 @@ window.onload = function() {
         <p style="font-size: 18px; margin: 0 0 15px;">Hello everyone 👋, We have a new update. Pls update to continue. Thank you! ❤️</p>
         <a href="` + updateAppLink + `" style="
             display: inline-block;
-            padding: 15px 30px;
+            padding: 10px 20px;
             color: white; /* Change text color to white */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
-            font-size: 16px;
         " class="gradient-background">Update Now</a>
         <br/><br/>
         <button id="updateLaterBtn" style="
@@ -68,7 +77,6 @@ window.onload = function() {
             background: none;
             border: none;
             cursor: pointer;
-            font-size: 16px;
         ">Update Later</button>
     `;
 
@@ -80,10 +88,12 @@ window.onload = function() {
 
     // Add event listener to the "Update Later" button
     document.getElementById("updateLaterBtn").addEventListener("click", function() {
-        warningDiv.style.opacity = "0"; // Smooth transition for hiding the warning div
-        setTimeout(function() {
-            warningDiv.style.visibility = "hidden"; // Hide the warning div after the transition
-        }, 500); // Match the transition duration
+        messageDiv.classList.remove("pop-in");
+        messageDiv.classList.add("pop-out");
+        setTimeout(() => {
+            warningDiv.style.visibility = "hidden"; // Hide the warning div after animation
+            warningDiv.style.opacity = "0"; // Ensure it hides after animation
+        }, 300); // Delay to match animation duration
     });
 
     // Check localStorage for the app version code
@@ -91,8 +101,7 @@ window.onload = function() {
 
     if (versionCode !== null && parseInt(versionCode) < minimumRequiredVersionCode) {
         warningDiv.style.visibility = "visible"; // Show the warning if version is less than the minimum required
-        setTimeout(function() {
-            warningDiv.style.opacity = "1"; // Smooth transition for showing the warning div
-        }, 10); // Slight delay to trigger the transition
+        warningDiv.style.opacity = "1"; // Show the warning div
+        messageDiv.classList.add("pop-in");
     }
 };
