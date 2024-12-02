@@ -21,7 +21,7 @@ window.onload = function() {
     warningDiv.style.padding = "20px"; // Add padding for responsiveness
     warningDiv.style.boxSizing = "border-box"; // Ensure padding does not affect size
 
-    // Create keyframes for gradient background animation
+    // Create keyframes for gradient background and outline animation
     const styleSheet = document.createElement("style");
     styleSheet.type = "text/css";
     styleSheet.innerText = `
@@ -30,10 +30,19 @@ window.onload = function() {
             50% { background-position: 100% 50%; }
             100% { background-position: 0% 50%; }
         }
+        @keyframes outlineGlow {
+            0% { border-color: #ff9a9e; }
+            50% { border-color: #fad0c4; }
+            100% { border-color: #ff9a9e; }
+        }
         .gradient-background {
             background: linear-gradient(45deg, #3B5998, #8E44AD, #F39C12, #27AE60);
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
+            border: 2px solid transparent; /* Initial border style */
+            border-image: linear-gradient(45deg, #3B5998, #8E44AD, #F39C12, #27AE60) 1;
+            border-radius: 5px;
+            animation: glowing 3s ease-in-out infinite, outlineGlow 3s ease-in-out infinite;
         }
     `;
     document.head.appendChild(styleSheet);
@@ -52,12 +61,11 @@ window.onload = function() {
         <a href="` + updateAppLink + `" style="
             display: inline-block;
             padding: 10px 20px;
-            color: #333;
+            color: white; /* Change text color to white */
             text-decoration: none;
             border-radius: 5px;
             font-weight: bold;
             background-size: 400% 400%;
-            animation: glowing 3s ease-in-out infinite;
         " class="gradient-background">Update Now</a>
     `;
 
