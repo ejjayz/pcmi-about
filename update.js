@@ -20,8 +20,6 @@ window.onload = function() {
     warningDiv.style.visibility = "hidden"; // Initially hidden
     warningDiv.style.padding = "20px"; // Add padding for responsiveness
     warningDiv.style.boxSizing = "border-box"; // Ensure padding does not affect size
-    warningDiv.style.opacity = "0"; // Initially transparent
-    warningDiv.style.transition = "opacity 1s"; // Fade-in transition
 
     // Create keyframes for gradient background animation
     const styleSheet = document.createElement("style");
@@ -36,13 +34,6 @@ window.onload = function() {
             background: linear-gradient(45deg, #3B5998, #8E44AD, #F39C12, #27AE60);
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
-        }
-        .hover-effect:hover {
-            background-color: #fff;
-            color: #333;
-        }
-        .blurred-background {
-            filter: blur(8px); /* Apply blur effect */
         }
     `;
     document.head.appendChild(styleSheet);
@@ -67,14 +58,7 @@ window.onload = function() {
             font-weight: bold;
             background-size: 400% 400%;
             animation: glowing 3s ease-in-out infinite;
-            transition: background-color 0.3s, color 0.3s;
-        " class="gradient-background hover-effect">Update Now</a>
-        <a href="#" id="updateLaterButton" style="
-            display: block;
-            margin-top: 15px;
-            color: white;
-            text-decoration: underline;
-        ">Update Later</a>
+        " class="gradient-background">Update Now</a>
     `;
 
     // Append the message div to the warning div
@@ -83,29 +67,10 @@ window.onload = function() {
     // Append the warning div to the body
     document.body.appendChild(warningDiv);
 
-    // Blur the background when warning is shown
-    const blurBackground = () => {
-        document.body.classList.add("blurred-background");
-    };
-
-    // Unblur the background when warning is hidden
-    const unblurBackground = () => {
-        document.body.classList.remove("blurred-background");
-    };
-
     // Check localStorage for the app version code
     const versionCode = localStorage.getItem("appilix_app_version_code");
 
     if (versionCode !== null && parseInt(versionCode) < minimumRequiredVersionCode) {
         warningDiv.style.visibility = "visible"; // Show the warning if version is less than the minimum required
-        warningDiv.style.opacity = "1"; // Fade-in effect
-        blurBackground(); // Apply blur effect
     }
-
-    // Hide warning on "Update Later" click
-    document.getElementById("updateLaterButton").onclick = function() {
-        warningDiv.style.visibility = "hidden";
-        warningDiv.style.opacity = "0";
-        unblurBackground(); // Remove blur effect
-    };
 };
