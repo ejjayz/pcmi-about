@@ -1,5 +1,5 @@
 window.onload = function() {
-    const minimumRequiredVersionCode = 5; // Replace with your minimum version code
+    const minimumRequiredVersionCode = 0; // Replace with your minimum version code
     const updateAppLink = "https://appilix.com"; // Replace with your app update URL
     const warningDiv = document.createElement("div");
 
