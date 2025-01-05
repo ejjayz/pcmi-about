@@ -1,5 +1,5 @@
 window.onload = function() {
-    const minimumRequiredVersionCode = 0.1; // Set this to your minimum required version
+    const minimumRequiredVersionCode = 2; // Set this to your minimum required version
     
     // Check if we're already on the update page to avoid infinite redirect
     if (window.location.href.includes("pcmi-update")) {
