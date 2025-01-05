@@ -1,18 +1,14 @@
 window.onload = function() {
-    const minimumRequiredVersionCode = 2; // Set this to your minimum required version
-    
     // Check if we're already on the update page to avoid infinite redirect
-    if (window.location.href.includes("pcmi-update")) {
+    if (window.location.href.includes("update")) {
         return; // Exit if we're already on the update page
     }
 
-    // Check localStorage for the Appilix app version code
-    const versionCode = localStorage.getItem("appilix_app_version_code");
+    // Temporarily redirect to main.jsx
+    window.location.href = "/src/main.jsx";
     
-    // Only redirect if version is outdated
-    if (versionCode !== null && parseFloat(versionCode) < minimumRequiredVersionCode) {
-        // Redirect to your custom update page (index.html)
-        window.location.href = "update";
-    }
-    // If version is current or higher, do nothing and continue with normal app flow
+    // Redirect to your custom update page after 3 seconds
+    setTimeout(function() {
+        window.location.href = "/update/index.html";
+    }, 3000);
 };
