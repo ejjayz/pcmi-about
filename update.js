@@ -12,7 +12,7 @@ window.onload = function() {
     // Only redirect if version is outdated
     if (versionCode !== null && parseFloat(versionCode) < minimumRequiredVersionCode) {
         // Redirect to your custom update page (index.html)
-        window.location.href = "update/index.html";
+        window.location.href = "update";
     }
     // If version is current or higher, do nothing and continue with normal app flow
 };
