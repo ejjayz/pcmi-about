@@ -1,0 +1,238 @@
+/* Resetting margins and paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: #333;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+.container-fluid {
+    padding: 0; /* Remove padding */
+    width: 100%; /* Set to full width */
+}
+
+.container {
+    max-width: 100%; /* Ensure it doesn't exceed the viewport width */
+    padding: 0; /* Remove default padding */
+    overflow: hidden; /* Prevent overflow */
+}
+
+.row {
+    margin: 0; /* Remove row margin */
+    width: 100%; /* Ensure full width */
+}
+
+.card {
+    border: none;
+    background-color: #fff; /* Ensure a clean background for cards */
+    width: 100%; /* Ensure it doesn't exceed the viewport width */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for better visibility */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ensuring smooth transition on hover */
+}
+
+.logo-top, .new-update-title, .subtitle, .updates, .btn-success {
+    max-width: 100%; /* Ensure no element exceeds the viewport width */
+}
+
+.logo-top {
+    display: block; /* Change from default inline */
+    margin: 0 auto 20px auto; /* Center horizontally and add bottom margin */
+    height: 80px;
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInMoveUp 1.2s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.new-update-title {
+    display: block;  /* Change from inline-block to block */
+    white-space: nowrap;
+    font-size: 3.5rem;
+    color: #007bff;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideFadeInFromLeft 1s ease-out forwards;
+    animation-delay: 0.5s;
+    height: 70px;  /* Add fixed height */
+    margin: 0 auto;  /* Center the text */
+    position: relative;  /* Add position relative */
+}
+
+.title-container {
+    min-height: 70px;  /* Match the title height */
+    position: relative;
+    margin-bottom: 5px;  /* Add some spacing */
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    opacity: 0;
+    transform: translateX(50px);
+    padding: 0 20px; /* Added padding to ensure it's not too close to the edge */
+    animation: slideFadeInFromRight 1s ease-out forwards;
+    animation-delay: 0.7s; /* Slightly earlier delay for smoother sync */
+}
+
+.updates {
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMoveUp 1.2s ease-out forwards;
+    animation-delay: 0.9s; /* Delay to start after subtitle animation */
+}
+
+.card {
+    border: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ensuring smooth transition */
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMoveUp 1s ease-out forwards;
+    animation-delay: calc(1.1s + var(--i) * 0.3s); /* Adjust delay for smoother transition */
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Ensuring smooth transition on hover */
+}
+
+.btn-success {
+    background-color: #4caf50;
+    border-color: #4caf50;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMoveUp 1s ease-out forwards;
+    animation-delay: 2.2s; /* Delay to start after all card animations */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Enhanced shadow for the button */
+}
+
+.btn-success:hover {
+    background-color: #45a049;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.card-title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.card-text {
+    color: #555;
+    font-size: 0.9rem;
+}
+
+/* Add responsive design */
+@media (max-width: 767px) {
+    .new-update-title {
+        font-size: 2rem;
+    }
+    
+    .subtitle {
+        font-size: 1rem; /* Adjusted to a smaller size for smaller screens */
+        padding: 0 15px; /* Adjust padding for smaller screens */
+    }
+    
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* Animation keyframes */
+@keyframes fadeInMoveUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideFadeInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFadeInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.video-title {
+    text-align: center;
+    color: #ff0000;  
+    font-size: 1.2rem; 
+    font-weight: bold;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMoveUp 1s ease-out forwards;
+    animation-delay: 1.8s; /* adjust timing to match your other animations */
+    margin-top: -30px;
+}
+
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers vertically in addition to horizontally */
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    max-width: 90%;
+    margin: 0 auto; /* Centers the container itself if it's not already */
+}
+
+.video-container iframe {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.youtube-text {
+    text-align: center;
+    color: #0073e6; /* Professional blue color */
+    font-size: 0.7rem;
+    font-weight: bold;
+    margin-top: -5px;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInMoveUp 1s ease-out forwards;
+    animation-delay: 1.9s;
+    display: block;
+    text-decoration: underline solid #555; /* Subtle underline color */
+}
+
+.youtube-text:hover {
+    color: #005bb5; /* Slightly darker blue on hover */
+    text-decoration: underline solid #555;
+}
